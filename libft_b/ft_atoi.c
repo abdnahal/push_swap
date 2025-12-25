@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 18:15:22 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/21 14:01:30 by abdnahal         ###   ########.fr       */
+/*   Created: 2025/10/15 06:53:32 by abdnahal          #+#    #+#             */
+/*   Updated: 2025/10/26 09:37:21 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_atoi(const char *nptr)
 {
-	t_list	*curr;
-	int		size;
-
-	if (!lst)
-		return (0);
-	size = 0;
-	curr = lst;
-	while (curr)
+	int i, (sign), (nbr);
+	i = 0;
+	sign = 1;
+	nbr = 0;
+	while (nptr[i])
 	{
-		size++;
-		curr = curr->next;
+		if (nptr[i] == '-' || nptr[i] == '+')
+		{
+			if (nptr[i] == '-')
+				sign *= -1;
+			i++;
+		}
+        if (!(nptr[i] >= '0' && nptr[i] <= '9'))
+        {
+            write(2, "ERROR", 5);
+            exit(1);
+        }
+		while (nptr[i] >= '0' && nptr[i] <= '9')
+			nbr = nbr * 10 + nptr[i++] - '0';
+		break ;
 	}
-	return (size);
+	return (nbr * sign);
 }
-
-// int main()
-// {
-//     t_list beef;
-//     t_list streak;
-//     t_list dead;
-//     t_list fuckoff;
-//     beef.next = &streak;
-//     streak.next = &dead;
-//     dead.next = &fuckoff;
-//     fuckoff.next = NULL;
-//     printf("%d\n", ft_lstsize(&beef));
-// }
