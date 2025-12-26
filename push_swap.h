@@ -10,6 +10,7 @@ typedef struct s_list{
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 char	**ft_split(char *str, char *charset);
 t_list				*ft_lstnew(int num);

@@ -6,11 +6,11 @@ int main(int ac, char **av)
     char **arr;
     t_list *head;
 
-    if (ac <= 2)
+    if (ac < 2)
         return (0);
-    arr = ft_split(av[1], " \t\v");
+    arr = ft_split(av[1], "         \v\f\r\n");
     i = 0;
     head = NULL;
-    while (arr[i++])
-        ft_lstadd_back(&head, ft_lstnew(ft_atoi(arr[i])));
+    while (arr[i])
+        ft_lstadd_back(&head, ft_lstnew(ft_atoi(arr[i++])));
 }
