@@ -17,7 +17,7 @@ int main(int ac, char **av)
     while (arr[i])
         free(arr[i++]);
     free(arr);
-    push_swap(head, ft_lstnew(0));
+    push_swap(&head, NULL);
     while (head)
     {
         printf("%d\n", head->num);
@@ -26,33 +26,33 @@ int main(int ac, char **av)
     
 }
 
-void rr(t_list *stack_a, t_list *stack_b)
+void rr(t_list **stack_a, t_list **stack_b)
 {
     rotate(stack_a, 'n');
     rotate(stack_b, 'n');
     write(1, "rr\n", 3);
 }
 
-void bubble_sort(t_list **head)
+void small_sort(t_list **stack_a, t_list **stack_b)
 {
-    t_list *curr;
-    t_list *tmp;
-    int numb;
+    int swapped;
+    t_list **p;
 
-    curr = *head;
-    while (curr->next)
+    if (!stack_a || !*stack_a)
+        return;
+    do
     {
-        tmp = *head;
-        while (tmp->next)
+        swapped = 0;
+        p = stack_a;
+        while (*p && (*p)->next)
         {
-            if (tmp->num > tmp->next->num)
+            if ((*p)->num > (*p)->next->num)
             {
-                numb = tmp->num;
-                tmp->num = tmp->next->num;
-                tmp->next->num = numb;
+                swap(p, 'a');
+                swapped = 1;
             }
-            tmp = tmp->next;
+            /* advance p to the next node's pointer (works after swap or not) */
+            p = &((*p)->next);
         }
-        curr = curr->next;
-    }
+    } while (swapped);
 }
