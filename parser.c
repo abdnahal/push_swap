@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:19:56 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/05 14:32:13 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/07 14:49:27 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main(int ac, char **av)
     while (arr[i])
         free(arr[i++]);
     free(arr);
+    indexing(head);
     push_swap(&head, NULL);
 }
 
