@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:19:49 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/07 13:56:38 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/07 16:50:54 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ void    push_swap(t_list **stack_a, t_list **stack_b)
         sort_3(stack_a);
     else if(ft_lstsize(*stack_a) <= 5)
         sort_5(stack_a, stack_b);
+    else if(ft_lstsize(*stack_a) <= 150)
+    {
+        sort_push_a(stack_a, stack_b, 0, 15);
+        sort_push_b(stack_a, stack_b);
+    }
+    else
+    {
+        sort_push_a(stack_a, stack_b, 0, 25);
+        sort_push_b(stack_a, stack_b);
+    }
 }
 
 void push(t_list **stack_a, t_list **stack_b, char c)
