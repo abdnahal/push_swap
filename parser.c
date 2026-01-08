@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:19:56 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/07 17:27:58 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/08 11:29:33 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int main(int ac, char **av)
     indexing(head);
     stack_b = NULL;
     push_swap(&head, &stack_b);
+    write(1, "afjdhjfhadskjf\n", 10);
 }
 
 int is_sorted(t_list *stack)

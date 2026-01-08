@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:19:49 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/07 17:39:47 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/08 11:30:03 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,14 @@ void    push_swap(t_list **stack_a, t_list **stack_b)
 
 void push(t_list **stack_a, t_list **stack_b, char c)
 {
-    t_list *tmp;
-
     if (c == 'a')
     {
-        if (!*stack_b) return;
-        tmp = *stack_b;
-        *stack_b = (*stack_b)->next;
-        tmp->next = NULL;
-        ft_lstadd_front(stack_a, tmp);
+        ft_lstadd_front(stack_a, stack_b);
         write(1, "pa\n", 3);
     }
     else
     {
-        if (!*stack_a) return;
-        tmp = *stack_a;
-        *stack_a = (*stack_a)->next;
-        tmp->next = NULL;
-        ft_lstadd_front(stack_b, tmp);
+        ft_lstadd_front(stack_b, stack_a);
         write(1, "pb\n", 3);
     }
 }
