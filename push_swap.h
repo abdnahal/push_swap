@@ -5,7 +5,6 @@ typedef struct s_list{
     int num;
     int index;
     struct s_list *next;
-    struct s_list *prv;
 }   t_list;
 
 #include <unistd.h>
@@ -42,5 +41,5 @@ t_list *locate_index(t_list *head, int index);
 int    is_in(t_list *stack, int min, int max);
 int get_pos(t_list *stack, int index);
 int get_pos_range(t_list *stack, int min, int max);
-
+void check_duplicates(t_list *head);
 #endif

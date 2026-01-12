@@ -1,10 +1,21 @@
 #include "push_swap.h"
 
-void printer(t_list *stack)
+void check_duplicates(t_list *head)
 {
-    while (stack)
+    t_list *temp;
+    while (head)
     {
-        printf("Num: %d, Index: %d\n", stack->num, stack->index);
-        stack = stack->next;
+        temp = head->next;
+        while (temp)
+        {
+            if (head->num == temp->num)
+            {
+                ft_lstclear(&head);z
+                write(2, "ERROR", 5);
+                exit(EXIT_FAILURE);
+            }
+            temp = temp->next;
+        }
+        head = head->next;
     }
 }
