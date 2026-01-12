@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:19:49 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/08 11:30:03 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/12 14:24:01 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void    push_swap(t_list **stack_a, t_list **stack_b)
         sort_push_a(stack_a, stack_b, 0, 25);
         sort_push_b(stack_a, stack_b);
     }
+    ft_lstclear(stack_a);
+    ft_lstclear(stack_b);
 }
 
 void push(t_list **stack_a, t_list **stack_b, char c)

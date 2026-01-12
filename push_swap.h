@@ -42,4 +42,7 @@ int    is_in(t_list *stack, int min, int max);
 int get_pos(t_list *stack, int index);
 int get_pos_range(t_list *stack, int min, int max);
 void check_duplicates(t_list *head);
+void    checker(t_list **stack_a, t_list **stack_b);
+void    checker2(t_list **stack_a, t_list **stack_b, char *str);
+
 #endif

@@ -10,7 +10,7 @@ void check_duplicates(t_list *head)
         {
             if (head->num == temp->num)
             {
-                ft_lstclear(&head);z
+                ft_lstclear(&head);
                 write(2, "ERROR", 5);
                 exit(EXIT_FAILURE);
             }
