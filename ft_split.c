@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:47:58 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/15 16:46:46 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:24:20 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,19 +91,15 @@ void	fill_arr(char **arr, char *str, char *charset)
 	while (str[i])
 	{
 		while (str[i] && is_set(str[i], charset))
-		{
 			i++;
-		}
 		j = 0;
 		while (str[i] && !is_set(str[i], charset))
-		{
-			arr[k][j] = str[i];
-			i++;
-			j++;
-		}
+			arr[k][j++] = str[i++];
 		arr[k][j] = '\0';
 		if (j != 0)
 			k++;
+		else
+			free(arr[k]);
 	}
 	arr[k] = NULL;
 }
@@ -117,9 +113,9 @@ char	**ft_split(char *str, char *charset)
 	arr = malloc((count + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
-	count_all(arr, str, charset);
-	fill_arr(arr, str, charset);
-	if (!arr[0])
+	if (count_all(arr, str, charset))
+		fill_arr(arr, str, charset);
+	else
 		return (NULL);
 	return (arr);
 }

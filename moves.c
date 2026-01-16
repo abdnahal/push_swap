@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:09:31 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/16 11:13:23 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:20:19 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ss(t_list **stack_a, t_list **stack_b, char c)
 
 void ft_error(t_list **stack, char **arr)
 {
-	write(2, "Error", 5);
+	write(2, "Error\n", 6);
 	free_all(arr);
 	ft_lstclear(stack);
 	exit(1);

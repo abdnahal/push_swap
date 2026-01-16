@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:37:36 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/16 11:13:42 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:25:27 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ t_list				*locate_index(t_list *head, int index);
 int					is_in(t_list *stack, int min, int max);
 int					get_pos(t_list *stack, int index);
 int					get_pos_range(t_list *stack, int min, int max);
-void				check_duplicates(t_list *stack_a);
+void				check_duplicates(t_list *stack_a, char **arr);
 void				checker2(t_list **stack_a, t_list **stack_b, char *str);
 void				checker3(t_list **stack_a, t_list **stack_b, char *str);
-void				checker(t_list **stack_a, t_list **stack_b);
+void				checker(t_list **stack_a, t_list **stack_b, char **arr);
 void				rrr(t_list **stack_a, t_list **stack_b);
 void				free_all(char **arr);
 void				ft_error(t_list **stack, char **arr);

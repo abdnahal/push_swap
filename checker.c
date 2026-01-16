@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:13:17 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/16 11:14:23 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:41:18 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	checker2(t_list **stack_a, t_list **stack_b, char *str)
 		checker3(stack_a, stack_b, str);
 }
 
-void	checker(t_list **stack_a, t_list **stack_b)
+void	checker(t_list **stack_a, t_list **stack_b, char **arr)
 {
 	char	*str;
 
-	check_duplicates(*stack_a);
+	check_duplicates(*stack_a, arr);
 	while (1)
 	{
 		str = get_next_line(0);
@@ -93,7 +93,7 @@ int	main(int ac, char **av)
 		i++;
 	}
 	stack_b = NULL;
-	checker(&head, &stack_b);
+	checker(&head, &stack_b, arr);
 }
 
 void	checker3(t_list **stack_a, t_list **stack_b, char *str)
@@ -107,7 +107,7 @@ void	checker3(t_list **stack_a, t_list **stack_b, char *str)
 		ft_lstclear(stack_a);
 		ft_lstclear(stack_b);
 		free(str);
-		write(2, "Error", 6);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
 }
