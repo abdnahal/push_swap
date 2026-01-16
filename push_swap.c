@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:19:49 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/15 17:03:42 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:24:27 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void	push_swap(t_list **stack_a, t_list **stack_b)
 {
-	if (is_sorted(*stack_a) || (*stack_a) == NULL)
+	if ((*stack_a) == NULL)
 		return ;
-	if (ft_lstsize(*stack_a) == 2)
+	if (!is_sorted(*stack_a) && ft_lstsize(*stack_a) == 2)
 		swap(stack_a, 'a');
-	else if (ft_lstsize(*stack_a) == 3)
+	else if (!is_sorted(*stack_a) && ft_lstsize(*stack_a) == 3)
 		sort_3(stack_a);
-	else if (ft_lstsize(*stack_a) == 4)
+	else if (!is_sorted(*stack_a) && ft_lstsize(*stack_a) == 4)
 		sort_4(stack_a, stack_b);
-	else if (ft_lstsize(*stack_a) <= 5)
+	else if (!is_sorted(*stack_a) && ft_lstsize(*stack_a) <= 5)
 		sort_5(stack_a, stack_b);
-	else if (ft_lstsize(*stack_a) <= 150)
+	else if (!is_sorted(*stack_a) && ft_lstsize(*stack_a) <= 150)
 	{
 		sort_push_a(stack_a, stack_b, 0, 15);
 		sort_push_b(stack_a, stack_b);
 	}
-	else
+	else if (!is_sorted(*stack_a))
 	{
 		sort_push_a(stack_a, stack_b, 0, 25);
 		sort_push_b(stack_a, stack_b);

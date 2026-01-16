@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:13:17 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/15 18:10:48 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:14:23 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	main(int ac, char **av)
 		k = 0;
 		arr = ft_split(av[i], "         \v\f\r\n");
 		while (arr[k])
-			ft_lstadd_back(&head, ft_lstnew(ft_atoi(arr[k++])));
+			ft_lstadd_back(&head, ft_lstnew(ft_atoi(arr[k++], &head, arr)));
 		free_all(arr);
 		arr = NULL;
 		i++;

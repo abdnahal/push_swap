@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:37:36 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/15 12:41:34 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:13:42 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void				ft_lstclear(t_list **lst);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-long				ft_atoi(const char *nptr);
+long				ft_atoi(const char *nptr, t_list **stack, char **arr);
 void				ss(t_list **stack_a, t_list **stack_b, char c);
 void				rotate(t_list **head, char c);
 void				swap(t_list **head, char c);
@@ -63,5 +63,7 @@ void				checker3(t_list **stack_a, t_list **stack_b, char *str);
 void				checker(t_list **stack_a, t_list **stack_b);
 void				rrr(t_list **stack_a, t_list **stack_b);
 void				free_all(char **arr);
+void				ft_error(t_list **stack, char **arr);
+int					ft_strlen(const char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:19:56 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/15 17:09:35 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:20:29 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	t_list	*stack_b;
 
 	int i, (k);
-	if (ac < 2)
+	if (ac <= 2)
 		return (0);
 	i = 1;
 	head = NULL;
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 		arr = ft_split(av[i], "         \t\v\f\r\n");
 		if (arr)
 			while (arr[k])
-				ft_lstadd_back(&head, ft_lstnew(ft_atoi(arr[k++])));
+				ft_lstadd_back(&head, ft_lstnew(ft_atoi(arr[k++], &head, arr)));
 		free_all(arr);
 		arr = NULL;
 		i++;

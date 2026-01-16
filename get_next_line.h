@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 14:36:45 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/12 14:48:49 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 10:19:00 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 void	ft_strcpy(char *dest, char *src);
 char	*ft_return(char **save);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-size_t	ft_strlen(const char *s);
+size_t	f_strlen(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s);

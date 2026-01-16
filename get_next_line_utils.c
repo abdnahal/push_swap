@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 14:42:08 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/14 14:39:04 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/16 10:20:19 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		free(s2);
 		return (join);
 	}
-	join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	join = malloc(f_strlen(s1) + f_strlen(s2) + 1);
 	if (!join)
 	{
 		free(s1);
@@ -62,10 +62,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
+	if (start > f_strlen(s))
 		return (ft_strdup(""));
-	if (len > ft_strlen(&s[start]))
-		len = ft_strlen(&s[start]);
+	if (len > f_strlen(&s[start]))
+		len = f_strlen(&s[start]);
 	sub = malloc(len + 1);
 	if (!sub)
 		return (NULL);
@@ -83,7 +83,7 @@ char	*ft_strdup(const char *s)
 	size_t	i;
 	char	*dup;
 
-	dup = malloc(ft_strlen(s) + 1);
+	dup = malloc(f_strlen(s) + 1);
 	if (!dup)
 		return (NULL);
 	i = 0;
@@ -96,7 +96,7 @@ char	*ft_strdup(const char *s)
 	return (dup);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	f_strlen(const char *s)
 {
 	size_t	i;
 
