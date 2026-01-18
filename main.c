@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:13:09 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/16 17:19:49 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/18 09:49:09 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	check_duplicates(t_list *stack_a, char **arr)
 {
 	t_list	*temp;
-	
+
 	if (!stack_a)
 		ft_error(&stack_a, arr);
 	while (stack_a)
@@ -23,13 +23,8 @@ void	check_duplicates(t_list *stack_a, char **arr)
 		temp = stack_a->next;
 		while (temp)
 		{
-			if ((stack_a->num == temp->num) || (stack_a->num > INT_MAX)
-				|| (stack_a->num < INT_MIN))
-			{
-				ft_lstclear(&stack_a);
-				write(2, "Error\n", 5);
-				exit(EXIT_FAILURE);
-			}
+			if (stack_a->num == temp->num)
+				ft_error(&stack_a, arr);
 			temp = temp->next;
 		}
 		stack_a = stack_a->next;

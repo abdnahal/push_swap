@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 06:53:32 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/16 11:13:05 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/18 09:48:21 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ long	ft_atoi(const char *nptr, t_list **stack, char **arr)
 	sign = 1;
 	nbr = 0;
 	if (ft_strlen(nptr) > 10)
-		ft_error(stack, arr);	
+		ft_error(stack, arr);
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (!(nptr[i+1] >= '0' && nptr[i+1] <= '9'))
+		if (!(nptr[i + 1] >= '0' && nptr[i + 1] <= '9'))
 			ft_error(stack, arr);
 		if (nptr[i] == '-')
 			sign *= -1;
@@ -32,12 +32,14 @@ long	ft_atoi(const char *nptr, t_list **stack, char **arr)
 		nbr = nbr * 10 + nptr[i++] - '0';
 	if (nptr[i] && !(nptr[i] >= '0' && nptr[i] <= '9'))
 		ft_error(stack, arr);
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		ft_error(stack, arr);
 	return (nbr * sign);
 }
 
-int ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

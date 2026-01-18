@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:09:31 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/16 17:20:19 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/18 09:46:34 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ss(t_list **stack_a, t_list **stack_b, char c)
 		write(1, "ss\n", 3);
 }
 
-void ft_error(t_list **stack, char **arr)
+void	ft_error(t_list **stack, char **arr)
 {
 	write(2, "Error\n", 6);
 	free_all(arr);
