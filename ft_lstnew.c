@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 10:24:58 by abdnahal          #+#    #+#             */
-/*   Updated: 2026/01/15 12:45:37 by abdnahal         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:26:17 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(long num)
 
 	if (num > INT_MAX || num < INT_MIN)
 	{
-		write(2, "Error", 5);
+		write(2, "Error\n", 6);
 		exit(EXIT_FAILURE);
 	}
 	new = malloc(sizeof(t_list));
